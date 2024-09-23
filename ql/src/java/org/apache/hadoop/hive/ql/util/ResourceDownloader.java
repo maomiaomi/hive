@@ -99,7 +99,7 @@ public class ResourceDownloader {
     File destinationDir = (subDir == null) ? resourceDir : new File(resourceDir, subDir);
     ensureDirectory(destinationDir);
     File destinationFile = new File(destinationDir, new Path(srcUri).getName());
-    String dest = destinationFile.getCanonicalPath();
+    String dest = destinationFile.toURI().toString();
     if (destinationFile.exists()) {
       return dest;
     }
